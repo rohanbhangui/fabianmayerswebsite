@@ -12,7 +12,7 @@ module.exports = {
     devtool: 'source-map',
     entry: './src/index.js',
     output: {
-        filename: '[name].[hash:20].js',
+        filename: '[name].js',
         path: buildPath
     },
     node: {
@@ -67,7 +67,7 @@ module.exports = {
                     {
                         loader: 'url-loader',
                         options: {
-                            name: '[name].[hash:20].[ext]',
+                            name: '[name].[ext]',
                             limit: 8192
                         }
                     }
@@ -86,7 +86,7 @@ module.exports = {
             // Your source logo
             logo: './src/assets/icon.png',
             // The prefix for all image files (might be a folder or a name)
-            prefix: 'icons-[hash]/',
+            prefix: 'icons/',
             // Generate a cache file with control hashes and
             // don't rebuild the favicons until those hashes change
             persistentCache: true,
@@ -95,7 +95,7 @@ module.exports = {
             // favicon background color (see https://github.com/haydenbleasel/favicons#usage)
             background: '#fff',
             // favicon app title (see https://github.com/haydenbleasel/favicons#usage)
-            title: 'fabel-website}}',
+            title: 'fabel-website',
 
             // which icons should be generated (see https://github.com/haydenbleasel/favicons#usage)
             icons: {
@@ -112,7 +112,7 @@ module.exports = {
             }
         }),
         new MiniCssExtractPlugin({
-            filename: 'styles.[contenthash].css'
+            filename: 'styles.css'
         }),
         new OptimizeCssAssetsPlugin({
             cssProcessor: require('cssnano'),
