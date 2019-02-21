@@ -1,14 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>fabel-website</title>
-	<link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700" rel="stylesheet">
-</head>
+<%= require('html-loader!./src/partials/head.html') %>
 <body id="home">
+	<%= require('html-loader!./src/partials/header.html') %>
 	<section id="main">
-		<div id="text-container">
+		<div class="text-container">
 			<div id="title-text">
 				FabEl
 			</div>
@@ -17,8 +13,25 @@
 			</div>
 		</div>
 		<div id="action-container">
-			<button class="alt-secondary">Watch Now</button>
-			<button class="alt-primary">Listen Now</button>
+			<a href="#" class="button alt-secondary" id="watch-now">Watch Now</a>
+			<a href="#" class="button alt-primary" id="listen-now">Listen Now</a>
+		</div>
+	</section>
+	<section id="social">
+		<div class="title">Connect.</div>
+		<a class="social-link" href="#"><i class="fab fa-facebook"></i></a>
+		<a class="social-link" href="#"><i class="fab fa-soundcloud"></i></a>
+		<a class="social-link" href="#"><i class="fab fa-instagram"></i></a>
+		<a class="social-link" href="#"><i class="fab fa-spotify"></i></a>
+		<a class="social-link" href="#"><i class="fab fa-itunes"></i></a>
+		<a class="social-link" href="#"><i class="fab fa-snapchat"></i></a>
+	</section>
+	<section id="hero-section-1">
+		<div class="content-container">
+			<div class="title">
+				Levitate
+			</div>
+			<button class="alt-secondary">Play</button>
 		</div>
 	</section>
 </body>

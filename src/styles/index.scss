@@ -1,3 +1,5 @@
+//for all files | TODO: make it available for multiple
+
 @import url('https://fonts.googleapis.com/css?family=Montserrat:700');
 
 //Variables
@@ -52,25 +54,48 @@ $font-secondary: 'Montserrat', sans-serif;
 }
 
 //Common Styles
-button {
-
-	padding: 10px 20px;
+.button, button {
+	text-decoration: none;
+	padding: 15px 30px;
 	text-transform: uppercase;
 	font-family: $font-secondary;
 	font-size: 13px;
 	letter-spacing: 1px;
 	cursor: pointer;
 
+	&.primary {
+		background: $color-primary;
+		border: 2px solid $color-primary;
+		color: #fff;
+	}
+
+	&.secondary {
+		border: 2px solid $color-primary;
+		color: $color-primary;
+		background: none;
+	}
+
 	&.alt-primary {
 		border: 2px solid #fff;
 		background: #fff;
 		color: #000;
+
+		// &:hover {
+		// 	background: $color-primary;
+		// 	border: 2px solid $color-primary;
+		// 	color: #fff;
+		// }
 	}
 
 	&.alt-secondary {
 		border: 2px solid #fff;
 		color: white;
 		background: none;
+
+		// &:hover {
+		// 	background: #fff;
+		// 	color: $color-primary;
+		// }
 	}
 
 	&:active {
@@ -84,14 +109,69 @@ button {
 	font-family: $font-primary;
 }
 
+//HEADER
+
+header {
+	position: absolute;
+	width: 100%;
+	text-align: center;
+
+	ul {
+		padding: 0;
+
+
+		&:hover {
+
+			li {
+
+				&:hover {
+					opacity: 1;
+				}
+			}
+			
+		}
+
+		li {
+			list-style: none;
+			display: inline-block;
+			vertical-align: middle;
+			transition: all 0.33s ease;
+			opacity: 0.5;
+			margin: 0 8px;
+
+			a {
+				font-family: $font-secondary;
+				color: white;
+				letter-spacing: 1px;
+				font-size: 13px;
+				cursor: pointer;
+				padding: 4px 0px;
+				margin: 0 7px;
+				text-decoration: none;
+				text-transform: uppercase;
+				transition: all 0.33s ease;
+				// border-bottom: 2px solid rgba(0, 0, 0, 0);
+
+				// &:not(.img):hover {
+				// 	border-bottom: 2px solid #fff;
+				// }
+			}
+
+			img {
+				width: 40px;
+				height: auto;
+			}
+		}
+	}
+}
+
 #home {
-	
 
 	//Main Code
 
 	#main {
 		background: #000 url("../assets/fabian-main.png");
-		background-size: auto 100%;
+		background-size: auto 125%;
 		background-position: 50% -10vh;
 		background-repeat: no-repeat;
 		min-height: 100vh;
@@ -101,16 +181,16 @@ button {
 			background-position: 50% 50%;
 		}
 
-		#text-container	{
+		.text-container	{
 			position: absolute;
 			left: 50%;
 			top: auto;
-			bottom: 60px;
+			bottom: 80px;
 			transform: translateY(-50%) translateX(-50%);
 		
 
 			@include xx-large {
-				left: 70%;
+				left: 73%;
 				top: 40%;
 				bottom: auto;
 			}
@@ -120,6 +200,9 @@ button {
 				letter-spacing: -3px;
 				font-weight: 500;
 				color: white;
+				opacity: 1;
+				position: relative;
+				left: 0;
 
 				@include xx-large {
 					font-size: 128px;
@@ -133,12 +216,20 @@ button {
 				font-weight: 600;
 				letter-spacing: -0.66px;
 				color: white;
+				opacity: 1;
+				position: relative;
+				left: 0;
 
 				@include xx-large {
 					margin-top: -10px;
 					font-size: 57.5px;
 					margin-left: 10px;
 					letter-spacing: -3.05px;
+				}
+
+				&.invisible {
+					left: -50px;
+					opacity: 0;
 				}
 			}
 		}
@@ -150,19 +241,82 @@ button {
 			transform: translateX(-50%);
 			width: 100%;
 			display: flex;
-			max-width: 320px;
+			max-width: 370px;
 			justify-content: space-between;
+			opacity: 1;
 
 			@include xx-large {
-				bottom: 160px;
+				bottom: 140px;
 			}
 
-			button {
+			.button, button {
 				margin: 0 7px;
 				width: 100%;
 
 				@include small {
 					width: auto;
+				}
+			}
+		}
+	}
+
+	#social {
+		margin: 75px 0;
+		text-align: center;
+
+		@include xx-large {
+			margin: 100px 0;
+		}
+
+		.title {
+			font-size: 35px;
+			font-weight: 600;
+			letter-spacing: -0.66px;
+			margin-bottom: 30px;
+			
+			@include xx-large {
+				font-size: 57.5px;
+				font-weight: 600;
+				letter-spacing: -3.05px;
+			}
+		}
+
+		.social-link {
+			&:hover, &:active, &:visited {
+				color: black;
+			}
+
+			.fab {
+				font-size: 31px;
+				margin: 0 6px;
+			}
+		}
+	}
+
+	#hero-section-1 {
+		background: #2A2E32 url("../assets/hero-1.png");
+		background-size: auto 100%;
+		background-position: 50% 45%;
+		background-repeat: no-repeat;
+		background-size: cover;
+		min-height: 600px;
+		width: 100%;
+
+		.content-container {
+			display: flex;
+
+			.title {
+				align-self: center;
+				font-size: 35px;
+				font-weight: 600;
+				letter-spacing: -0.66px;
+				margin-bottom: 30px;
+				color: white;
+				
+				@include xx-large {
+					font-size: 57.5px;
+					font-weight: 600;
+					letter-spacing: -3.05px;
 				}
 			}
 		}
