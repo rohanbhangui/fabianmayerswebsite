@@ -10,9 +10,14 @@ const buildPath = path.resolve(__dirname, 'dist');
 
 module.exports = {
     devtool: 'source-map',
-    entry: './src/index.js',
+    entry: {
+        '/': './src/index.js',
+        'about': './src/about/index.js'
+    },
     output: {
-        filename: '[name].js',
+        filename: (chunkData) => {
+            return chunkData.chunk.name === "/" ? 'index.js' : '[name]/index.js';
+        },
         path: buildPath
     },
     node: {
@@ -78,15 +83,24 @@ module.exports = {
     plugins: [
         new HtmlWebpackPlugin({
             template: './index.html',
-            // Inject the js bundle at the end of the body of the given template
-            inject: 'body',
+            chunks: ['./'],
+            filename: './index.html', //relative to root of the application,
+            inject: 'body'
+        }),
+        new HtmlWebpackPlugin({
+            title: 'My Awesome application',
+            myPageHeader: 'About',
+            template: './src/about/index.html',
+            chunks: ['about'],
+            filename: './about/index.html' ,
+            inject: 'body'
         }),
         new CleanWebpackPlugin(buildPath),
         new FaviconsWebpackPlugin({
             // Your source logo
             logo: './src/assets/icon.png',
             // The prefix for all image files (might be a folder or a name)
-            prefix: 'icons/',
+            prefix: '/icons/',
             // Generate a cache file with control hashes and
             // don't rebuild the favicons until those hashes change
             persistentCache: true,
