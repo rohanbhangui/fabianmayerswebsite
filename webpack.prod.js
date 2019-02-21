@@ -83,13 +83,11 @@ module.exports = {
     plugins: [
         new HtmlWebpackPlugin({
             template: './index.html',
-            chunks: ['./'],
+            chunks: ['/'],
             filename: './index.html', //relative to root of the application,
             inject: 'body'
         }),
         new HtmlWebpackPlugin({
-            title: 'My Awesome application',
-            myPageHeader: 'About',
             template: './src/about/index.html',
             chunks: ['about'],
             filename: './about/index.html' ,

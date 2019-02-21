@@ -1,10 +1,22 @@
 const path = require('path');
 
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+
+const buildPath = path.resolve(__dirname, 'dist');
 
 module.exports = {
     devtool: 'eval-cheap-module-source-map',
-    entry: './src/index.js',
+    entry: {
+        '/': './src/index.js',
+        'about': './src/about/index.js'
+    },
+    output: {
+        filename: (chunkData) => {
+            return chunkData.chunk.name === "/" ? 'index.js' : '[name]/index.js';
+        },
+        path: buildPath
+    },
     devServer: {
         port: 8080,
         contentBase: path.join(__dirname, "dist")
@@ -26,11 +38,7 @@ module.exports = {
                 test: /\.(scss|css)$/,
                 use: [
                     {
-                        // creates style nodes from JS strings
-                        loader: "style-loader",
-                        options: {
-                            sourceMap: true
-                        }
+                        loader: MiniCssExtractPlugin.loader
                     },
                     {
                         // translates CSS into CommonJS
@@ -71,7 +79,18 @@ module.exports = {
     plugins: [
         new HtmlWebpackPlugin({
             template: './index.html',
-            inject: true
-        })
+            chunks: ['/'],
+            filename: './index.html', //relative to root of the application,
+            inject: 'body'
+        }),
+        new HtmlWebpackPlugin({
+            template: './src/about/index.html',
+            chunks: ['about'],
+            filename: './about/index.html' ,
+            inject: 'body'
+        }),
+        new MiniCssExtractPlugin({
+            filename: 'styles.css'
+        }),
     ]
 };

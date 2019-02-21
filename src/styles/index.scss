@@ -84,83 +84,86 @@ button {
 	font-family: $font-primary;
 }
 
-
-//Main Code
-
-#main {
-	background: #000 url("../assets/fabian-main.png");
-	background-size: auto 100%;
-	background-position: 50% -10vh;
-	background-repeat: no-repeat;
-	min-height: 100vh;
-	width: 100%;
-
-	@include xx-large {
-		background-position: 50% 50%;
-	}
-
-	#text-container	{
-		position: absolute;
-		left: 50%;
-		top: auto;
-		bottom: 60px;
-		transform: translateY(-50%) translateX(-50%);
+#home {
 	
 
-		@include xx-large {
-			left: 70%;
-			top: 40%;
-			bottom: auto;
-		}
+	//Main Code
 
-		#title-text {
-			font-size: 82px;
-			letter-spacing: -3px;
-			font-weight: 500;
-			color: white;
-
-			@include xx-large {
-				font-size: 128px;
-				letter-spacing: -6.8px;
-			}
-		}
-
-		#subtitle-text {
-			font-size: 35px;
-			margin-left: 8px;
-			font-weight: 600;
-			letter-spacing: -0.66px;
-			color: white;
-
-			@include xx-large {
-				margin-top: -10px;
-				font-size: 57.5px;
-				margin-left: 10px;
-				letter-spacing: -3.05px;
-			}
-		}
-	}
-
-	#action-container {
-		position: absolute;
-		bottom: 50px;
-		left: 50%;
-		transform: translateX(-50%);
+	#main {
+		background: #000 url("../assets/fabian-main.png");
+		background-size: auto 100%;
+		background-position: 50% -10vh;
+		background-repeat: no-repeat;
+		min-height: 100vh;
 		width: 100%;
-		display: flex;
-		max-width: 320px;
-		justify-content: space-between;
 
 		@include xx-large {
-			bottom: 160px;
+			background-position: 50% 50%;
 		}
 
-		button {
-			margin: 0 7px;
-			width: 100%;
+		#text-container	{
+			position: absolute;
+			left: 50%;
+			top: auto;
+			bottom: 60px;
+			transform: translateY(-50%) translateX(-50%);
+		
 
-			@include small {
-				width: auto;
+			@include xx-large {
+				left: 70%;
+				top: 40%;
+				bottom: auto;
+			}
+
+			#title-text {
+				font-size: 82px;
+				letter-spacing: -3px;
+				font-weight: 500;
+				color: white;
+
+				@include xx-large {
+					font-size: 128px;
+					letter-spacing: -6.8px;
+				}
+			}
+
+			#subtitle-text {
+				font-size: 35px;
+				margin-left: 8px;
+				font-weight: 600;
+				letter-spacing: -0.66px;
+				color: white;
+
+				@include xx-large {
+					margin-top: -10px;
+					font-size: 57.5px;
+					margin-left: 10px;
+					letter-spacing: -3.05px;
+				}
+			}
+		}
+
+		#action-container {
+			position: absolute;
+			bottom: 50px;
+			left: 50%;
+			transform: translateX(-50%);
+			width: 100%;
+			display: flex;
+			max-width: 320px;
+			justify-content: space-between;
+
+			@include xx-large {
+				bottom: 160px;
+			}
+
+			button {
+				margin: 0 7px;
+				width: 100%;
+
+				@include small {
+					width: auto;
+				}
 			}
 		}
 	}
