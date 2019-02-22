@@ -1,7 +1,7 @@
 // for the home page/ root
 
 require('normalize.css/normalize.css');
-require('./styles/index.scss');
+require('./assets/styles/index.scss');
 
 document.addEventListener("DOMContentLoaded", () => {
 	// const titleTextGroup = document.querySelector("#main #text-container");
