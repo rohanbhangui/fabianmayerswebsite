@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<%= require('html-loader!../partials/head.html') %>
+
+<body id='videos'>
+	<%= require('html-loader!../partials/header.html') %>
+	<section id="main">
+		<div class="text-container">
+			<h2 id="title-text">
+				Watch
+			</h2>
+		</div>
+	</section>
+	<section id="video-1">
+		<video controls poster="<%= require('../assets/videos/levitate/levitate-poster.png') %>" controlsList="nodownload">
+		  <source src="<%= require('../assets/videos/levitate/levitate.mp4') %>" type="video/mp4">
+		  <p>Your browser doesn't support HTML5 video. Here is
+		     a <a href="#">link to the video</a> instead.</p>
+		</video>
+	</section>
+</body>
+</html>

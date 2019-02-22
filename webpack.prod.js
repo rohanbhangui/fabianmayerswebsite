@@ -14,7 +14,9 @@ module.exports = {
         '/': './src/index.js',
         'about': './src/about/index.js',
         'contact': './src/contact/index.js',
-        'shop': './src/shop/index.js'
+        'shop': './src/shop/index.js',
+        'music': './src/music/index.js',
+        'videos': './src/videos/index.js'
     },
     output: {
         filename: (chunkData) => {
@@ -74,9 +76,20 @@ module.exports = {
                     {
                         loader: 'url-loader',
                         options: {
-                            name: '[name].[ext]',
+                            name: '[path][name].[ext]',
                             limit: 8192
                         }
+                    }
+                ]
+            },
+            {
+                test: /\.(mov|mp4)$/,
+                use: [
+                    {
+                        loader: 'file-loader',
+                        options: {
+                            name: '[path][name].[ext]'
+                        }  
                     }
                 ]
             }
@@ -107,10 +120,22 @@ module.exports = {
             filename: './shop/index.html' ,
             inject: 'body'
         }),
+        new HtmlWebpackPlugin({
+            template: './src/music/index.html',
+            chunks: ['music'],
+            filename: './music/index.html' ,
+            inject: 'body'
+        }),
+        new HtmlWebpackPlugin({
+            template: './src/videos/index.html',
+            chunks: ['videos'],
+            filename: './videos/index.html' ,
+            inject: 'body'
+        }),
         new CleanWebpackPlugin(buildPath),
         new FaviconsWebpackPlugin({
             // Your source logo
-            logo: './src/assets/icon.png',
+            logo: './src/assets/images/icon.png',
             // The prefix for all image files (might be a folder or a name)
             prefix: '/icons/',
             // Generate a cache file with control hashes and

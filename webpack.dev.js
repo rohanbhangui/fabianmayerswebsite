@@ -11,7 +11,9 @@ module.exports = {
         '/': './src/index.js',
         'about': './src/about/index.js',
         'contact': './src/contact/index.js',
-        'shop': './src/shop/index.js'
+        'shop': './src/shop/index.js',
+        'music': './src/music/index.js',
+        'videos': './src/videos/index.js'
     },
     output: {
         filename: (chunkData) => {
@@ -70,9 +72,20 @@ module.exports = {
                         loader: 'url-loader',
                         options: {
                             // On development we want to see where the file is coming from, hence we preserve the [path]
-                            name: '[path][name].[ext]?hash=[hash:20]',
+                            name: '[path][name].[ext]',
                             limit: 8192
                         }
+                    }
+                ]
+            },
+            {
+                test: /\.(mov|mp4)$/,
+                use: [
+                    {
+                        loader: 'file-loader',
+                        options: {
+                            name: '[path][name].[ext]'
+                        }  
                     }
                 ]
             }
@@ -101,6 +114,18 @@ module.exports = {
             template: './src/shop/index.html',
             chunks: ['shop'],
             filename: './shop/index.html' ,
+            inject: 'body'
+        }),
+        new HtmlWebpackPlugin({
+            template: './src/music/index.html',
+            chunks: ['music'],
+            filename: './music/index.html' ,
+            inject: 'body'
+        }),
+        new HtmlWebpackPlugin({
+            template: './src/videos/index.html',
+            chunks: ['videos'],
+            filename: './videos/index.html' ,
             inject: 'body'
         }),
         new MiniCssExtractPlugin({
