@@ -5,12 +5,12 @@
 	<%= require('html-loader!./src/partials/header.html') %>
 	<section id="main">
 		<div class="text-container">
-			<div id="title-text">
+			<h1 id="title-text">
 				FabEl
-			</div>
-			<div id="subtitle-text">
+			</h1>
+			<h3 id="subtitle-text">
 				Toronto, CA
-			</div>
+			</h3>
 		</div>
 		<div id="action-container">
 			<a href="#" class="button alt-secondary" id="watch-now">Watch Now</a>
@@ -18,21 +18,16 @@
 		</div>
 	</section>
 	<section id="social">
-		<div class="title">Connect.</div>
-		<a class="social-link" href="#"><i class="fab fa-facebook"></i></a>
-		<a class="social-link" href="#"><i class="fab fa-soundcloud"></i></a>
-		<a class="social-link" href="#"><i class="fab fa-instagram"></i></a>
-		<a class="social-link" href="#"><i class="fab fa-spotify"></i></a>
-		<a class="social-link" href="#"><i class="fab fa-itunes"></i></a>
-		<a class="social-link" href="#"><i class="fab fa-snapchat"></i></a>
+		<h3 class="title">Connect.</h3>
+		<%= require('html-loader!./src/partials/social.html') %>
 	</section>
-	<section id="hero-section-1">
+<!-- 	<section id="hero-section-1">
 		<div class="content-container">
-			<div class="title">
+			<h3 class="title">
 				Levitate
-			</div>
+			</h3>
 			<button class="alt-secondary">Play</button>
 		</div>
-	</section>
+	</section> -->
 </body>
 </html>

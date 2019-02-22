@@ -9,7 +9,9 @@ module.exports = {
     devtool: 'eval-cheap-module-source-map',
     entry: {
         '/': './src/index.js',
-        'about': './src/about/index.js'
+        'about': './src/about/index.js',
+        'contact': './src/contact/index.js',
+        'shop': './src/shop/index.js'
     },
     output: {
         filename: (chunkData) => {
@@ -87,6 +89,18 @@ module.exports = {
             template: './src/about/index.html',
             chunks: ['about'],
             filename: './about/index.html' ,
+            inject: 'body'
+        }),
+        new HtmlWebpackPlugin({
+            template: './src/contact/index.html',
+            chunks: ['contact'],
+            filename: './contact/index.html' ,
+            inject: 'body'
+        }),
+        new HtmlWebpackPlugin({
+            template: './src/shop/index.html',
+            chunks: ['shop'],
+            filename: './shop/index.html' ,
             inject: 'body'
         }),
         new MiniCssExtractPlugin({
