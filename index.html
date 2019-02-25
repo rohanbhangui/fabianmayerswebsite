@@ -1,33 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
-<%= require('html-loader!./src/assets/partials/head.html') %>
-<body id="home">
-	<%= require('html-loader!./src/assets/partials/header.html') %>
-	<section id="main">
-		<div class="text-container">
-			<h1 id="title-text">
-				FabEl
-			</h1>
-			<h3 id="subtitle-text">
-				Toronto, CA
-			</h3>
-		</div>
-		<div id="action-container">
-			<a href="#" class="button alt-secondary" id="watch-now">Watch Now</a>
-			<a href="#" class="button alt-primary" id="listen-now">Listen Now</a>
-		</div>
-	</section>
-	<section id="social">
-		<h3 class="title">Connect.</h3>
-		<%= require('html-loader!./src/assets/partials/social.html') %>
-	</section>
-<!-- 	<section id="hero-section-1">
-		<div class="content-container">
-			<h3 class="title">
-				Levitate
-			</h3>
-			<button class="alt-secondary">Play</button>
-		</div>
-	</section> -->
-</body>
+	<head>
+		<%= require('html-loader!./src/assets/partials/head.html') %>
+		<title>fabel-website</title>
+	</head>
+	<body id="home">
+		<%= require('html-loader!./src/assets/partials/header.html') %>
+		<section id="main">
+			<div class="text-container">
+				<h1 id="title-text">
+					FabEl
+				</h1>
+				<h3 id="subtitle-text">
+					Toronto, CA
+				</h3>
+			</div>
+			<div id="action-container">
+				<a href="#" class="button alt-secondary" id="watch-now">Watch Now</a>
+				<a href="#" class="button alt-primary" id="listen-now">Listen Now</a>
+			</div>
+		</section>
+		<section id="social">
+			<h3 class="title">Connect.</h3>
+			<%= require('html-loader!./src/assets/partials/social.html') %>
+		</section>
+	<!-- 	<section id="hero-section-1">
+			<div class="content-container">
+				<h3 class="title">
+					Levitate
+				</h3>
+				<button class="alt-secondary">Play</button>
+			</div>
+		</section> -->
+	</body>
 </html>

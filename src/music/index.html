@@ -1,15 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
-<%= require('html-loader!../assets/partials/head.html') %>
+	<head>
+		<%= require('html-loader!../assets/partials/head.html') %>
+		<title>fabel-website</title>
+	</head>
 
-<body id='music'>
-	<%= require('html-loader!../assets/partials/header.html') %>
-	<section id="main">
-		<div class="text-container">
-			<h2 id="title-text">
-				Listen
-			</h2>
-		</div>
-	</section>
-</body>
+	<body id='music'>
+		<%= require('html-loader!../assets/partials/header.html') %>
+		<section id="main">
+			<div class="text-container">
+				<h2 id="title-text">
+					Listen
+				</h2>
+			</div>
+		</section>
+	</body>
 </html>
