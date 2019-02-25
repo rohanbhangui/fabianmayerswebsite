@@ -1,0 +1,53 @@
+#videos {
+	//Videos Page
+	
+	#main {
+		background: #000 url("../images/videos-hero.jpg");
+		background-size: cover;
+		background-position: 50% 50%;
+		background-repeat: no-repeat;
+		min-height: 400px;
+		width: 100%;
+		position: relative;
+
+		@include xx-large {
+			background-position: 50% 50%;
+			min-height: 600px;
+		}
+
+		.text-container	{
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			transform: translateY(-50%) translateX(-50%);
+		
+
+			@include xx-large {
+				left: 50%;
+				top: 50%;
+				bottom: auto;
+			}
+
+			#title-text {
+				color: white;
+				opacity: 1;
+				position: relative;
+				left: 0;
+			}
+		}
+	}
+
+	#video-1 {
+		margin: 75px 0;
+		text-align: center;
+
+		@include xx-large {
+			margin: 100px 0;
+		}
+
+		video {
+			max-width: 800px;
+			width: 100%;
+		}
+	}
+}

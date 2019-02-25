@@ -1,0 +1,114 @@
+#home {
+
+	#main {
+		background: #000 url("../images/fabian-main.png");
+		background-size: auto 125%;
+		background-position: 50% -10vh;
+		background-repeat: no-repeat;
+		min-height: 100vh;
+		width: 100%;
+		position: relative;
+
+		@include xx-large {
+			background-position: 50% 50%;
+		}
+
+		.text-container	{
+			position: absolute;
+			left: 50%;
+			top: auto;
+			bottom: 80px;
+			transform: translateY(-50%) translateX(-50%);
+		
+
+			@include xx-large {
+				left: 73%;
+				top: 40%;
+				bottom: auto;
+			}
+
+			#title-text {
+				color: white;
+				opacity: 1;
+				position: relative;
+				left: 0;
+			}
+
+			#subtitle-text {
+				margin-left: 8px;
+				color: white;
+				opacity: 1;
+				position: relative;
+				left: 0;
+
+				@include xx-large {
+					margin-top: -10px;
+					margin-left: 10px;
+				}
+
+				&.invisible {
+					left: -50px;
+					opacity: 0;
+				}
+			}
+		}
+
+		#action-container {
+			position: absolute;
+			bottom: 50px;
+			left: 50%;
+			transform: translateX(-50%);
+			width: 100%;
+			display: flex;
+			max-width: 370px;
+			justify-content: space-between;
+			opacity: 1;
+
+			@include xx-large {
+				bottom: 140px;
+			}
+
+			.button, button {
+				margin: 0 7px;
+				width: 100%;
+
+				@include small {
+					width: auto;
+				}
+			}
+		}
+	}
+
+	#social {
+		margin: 75px 0;
+		text-align: center;
+
+		@include xx-large {
+			margin: 100px 0;
+		}
+
+		.title {
+			margin-bottom: 30px;
+		}
+	}
+
+	#hero-section-1 {
+		background: #2A2E32 url("../images/hero-1.png");
+		background-size: auto 100%;
+		background-position: 50% 45%;
+		background-repeat: no-repeat;
+		background-size: cover;
+		min-height: 600px;
+		width: 100%;
+
+		.content-container {
+			display: flex;
+
+			.title {
+				align-self: center;
+				margin-bottom: 30px;
+				color: white;
+			}
+		}
+	}
+}
