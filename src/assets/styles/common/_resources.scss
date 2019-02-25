@@ -175,6 +175,19 @@ $font-secondary: 'Montserrat', sans-serif;
 	}
 }
 
+//Section style
+
+.inverted {
+	background: black;
+	color: white;
+
+	.social-link {
+		&, &:hover, &:active, &:visited {
+			color: white;
+		}
+	}
+}
+
 
 * {
 	font-family: $font-primary;

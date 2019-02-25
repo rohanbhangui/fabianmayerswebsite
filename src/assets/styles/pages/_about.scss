@@ -63,4 +63,14 @@
 			// font-style: oblique;
 		}
 	}
+
+	#social {
+		padding: 75px 0;
+		text-align: center;
+
+		@include xx-large {
+			padding: 100px 0;
+		}
+	}
+
 }
