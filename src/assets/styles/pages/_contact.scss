@@ -58,6 +58,7 @@
 			.flex-left, .flex-right {
 				flex: 0 0 100%;
 				// border: 1px solid #ff0000;
+				padding: 50px 0;
 
 				@include large {
 					flex: 0 0 50%;
