@@ -29,7 +29,11 @@ header {
 			opacity: 0.5;
 			margin: 0 -5px;
 
-			@include small {
+			@media (min-width: 400px) {
+				margin: 0 3px;
+			}
+
+			@media (min-width: 450px) {
 				margin: 0 8px;
 			}
 
