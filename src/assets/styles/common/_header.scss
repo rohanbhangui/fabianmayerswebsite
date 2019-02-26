@@ -27,9 +27,14 @@ header {
 			vertical-align: middle;
 			transition: all 0.33s ease;
 			opacity: 0.5;
-			margin: 0 8px;
+			margin: 0 -5px;
+
+			@include small {
+				margin: 0 8px;
+			}
 
 			a {
+				display: inline-block;
 				font-family: $font-secondary;
 				color: white;
 				letter-spacing: 1px;
