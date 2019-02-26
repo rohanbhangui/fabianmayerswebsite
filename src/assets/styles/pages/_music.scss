@@ -1,6 +1,8 @@
 #music {
 	//Music Page
 	
+	background: #000;
+
 	#main {
 		background: #000 url("../images/music-hero.jpg");
 		background-size: cover;
@@ -81,6 +83,15 @@
 			// .flex-right {
 			// 	border-left: 1.5px solid #000;
 			// }
+		}
+	}
+
+	#social {
+		padding: 75px 0;
+		text-align: center;
+
+		@include xx-large {
+			padding: 100px 0;
 		}
 	}
 }

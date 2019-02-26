@@ -188,6 +188,13 @@ $font-secondary: 'Montserrat', sans-serif;
 	}
 }
 
+::selection {
+  background: #ccc;
+}
+::-moz-selection {
+  background: #ccc;
+}
+
 
 * {
 	font-family: $font-primary;

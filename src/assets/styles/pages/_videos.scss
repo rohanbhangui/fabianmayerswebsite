@@ -1,5 +1,7 @@
 #videos {
 	//Videos Page
+
+	background: #000;
 	
 	#main {
 		background: #000 url("../images/videos-hero.jpg");
@@ -48,6 +50,15 @@
 		video {
 			max-width: 800px;
 			width: 100%;
+		}
+	}
+
+	#social {
+		padding: 75px 0;
+		text-align: center;
+
+		@include xx-large {
+			padding: 100px 0;
 		}
 	}
 }
