@@ -6,6 +6,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const SitemapWebpackPlugin = require('sitemap-webpack-plugin').default;
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const RobotstxtPlugin = require("robotstxt-webpack-plugin");
 
 const buildPath = path.resolve(__dirname, 'dist');
 
@@ -163,6 +164,32 @@ module.exports = {
         }),
         new SitemapWebpackPlugin('https://fabelsounds.com', paths, {
             fileName: 'sitemap.xml'
+        }),
+        new RobotstxtPlugin({
+            filePath: '/robots.txt',
+            policy: [
+                {
+                  userAgent: "Googlebot",
+                  allow: "/",
+                  disallow: ["/search"],
+                  crawlDelay: 2
+                },
+                {
+                  userAgent: "OtherBot",
+                  allow: ["/allow-for-all-bots", "/allow-only-for-other-bot"],
+                  disallow: ["/admin", "/login"],
+                  crawlDelay: 2
+                },
+                {
+                  userAgent: "*",
+                  allow: "/",
+                  disallow: "/search",
+                  crawlDelay: 10,
+                  cleanParam: "ref /articles/"
+                }
+            ],
+            sitemap: "http://fabelsounds.com/sitemap.xml",
+            host: "http://fabelsounds.com"
         }),
         new CleanWebpackPlugin(buildPath),
         new FaviconsWebpackPlugin({
