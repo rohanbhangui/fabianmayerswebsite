@@ -3,10 +3,39 @@ const path = require('path');
 const FaviconsWebpackPlugin = require('favicons-webpack-plugin')
 const CleanWebpackPlugin = require('clean-webpack-plugin'); //installed via npm
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const SitemapWebpackPlugin = require('sitemap-webpack-plugin').default;
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 
 const buildPath = path.resolve(__dirname, 'dist');
+
+const paths = [
+    {
+        path: '/',
+        lastMod: '2019-05-21T19:34:40+00:00',
+        priority: '1.00'
+    },
+    {
+        path: '/about/',
+        lastMod: '2019-05-21T19:34:40+00:00',
+        priority: '0.80'
+    },
+    {
+        path: '/contact/',
+        lastMod: '2019-05-21T19:34:40+00:00',
+        priority: '0.80'
+    },
+    {
+        path: '/music/',
+        lastMod: '2019-05-21T19:34:40+00:00',
+        priority: '0.80'
+    },
+    {
+        path: '/videos/',
+        lastMod: '2019-05-21T19:34:40+00:00',
+        priority: '0.80'
+    }
+];
 
 module.exports = {
     devtool: 'source-map',
@@ -131,6 +160,9 @@ module.exports = {
             chunks: ['videos'],
             filename: './videos/index.html' ,
             inject: 'body'
+        }),
+        new SitemapWebpackPlugin('https://fabelsounds.com', paths, {
+            fileName: 'sitemap.xml'
         }),
         new CleanWebpackPlugin(buildPath),
         new FaviconsWebpackPlugin({
