@@ -39,6 +39,17 @@
 		}
 	}
 
+	.videos {
+		h3 {
+			color: white;
+			margin: 75px 0;
+
+			@include xx-large {
+				margin: 135px 0;
+			}
+		}
+	}
+
 	#video-1 {
 		margin: 75px 0;
 		text-align: center;
