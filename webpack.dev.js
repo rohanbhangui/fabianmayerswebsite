@@ -79,12 +79,23 @@ module.exports = {
                 ]
             },
             {
-                test: /\.(mov|mp4|pdf)$/,
+                test: /\.(mov|mp4)$/,
                 use: [
                     {
                         loader: 'file-loader',
                         options: {
                             name: '[path][name].[ext]'
+                        }  
+                    }
+                ]
+            },
+            {
+                test: /\.(pdf)$/,
+                use: [
+                    {
+                        loader: 'file-loader',
+                        options: {
+                            name: '[path][name].[ext]',
                         }  
                     }
                 ]
